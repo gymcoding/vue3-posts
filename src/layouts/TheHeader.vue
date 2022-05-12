@@ -27,7 +27,11 @@
 							>
 						</li>
 						<li class="nav-item">
-							<RouterLink class="nav-link" active-class="active" to="/posts">
+							<RouterLink
+								class="nav-link"
+								active-class="active"
+								:to="{ name: 'PostList', replace: true }"
+							>
 								게시글
 							</RouterLink>
 						</li>
@@ -48,7 +52,9 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const goPage = () => {
-	router.push('/posts/create');
+	router.push({
+		name: 'PostCreate',
+	});
 };
 </script>
 
