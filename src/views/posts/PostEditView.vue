@@ -73,7 +73,7 @@ const vAlert = (message, type = 'error') => {
 	alertType.value = type;
 	setTimeout(() => {
 		showAlert.value = false;
-	}, 3000);
+	}, 2000);
 };
 </script>
 
