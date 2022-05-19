@@ -27,9 +27,6 @@ export default {
 import { inject, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import AppCard from '@/components/AppCard.vue';
-import AppGrid from '@/components/AppGrid.vue';
-
 const router = useRouter();
 const goAboutPage = () => {
 	router.push('/about');
