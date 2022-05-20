@@ -33,12 +33,14 @@
 import { useRouter } from 'vue-router';
 import { getPostById, deletePost } from '@/api/posts';
 import { ref } from 'vue';
+import { useAlert } from '@/composables/alert';
 
 const props = defineProps({
 	id: [String, Number],
 });
 
 const router = useRouter();
+const { vAlert, vSuccess } = useAlert();
 // const id = route.params.id;
 /**
  * ref
@@ -62,6 +64,7 @@ const fetchPost = async () => {
 		setPost(data);
 	} catch (error) {
 		console.error(error);
+		vAlert(error.message);
 	}
 };
 const setPost = ({ title, content, createdAt }) => {
@@ -76,9 +79,11 @@ const remove = async () => {
 			return;
 		}
 		await deletePost(props.id);
+		vSuccess('삭제가 완료되었습니다.');
 		router.push({ name: 'PostList' });
 	} catch (error) {
 		console.error(error);
+		vAlert(error.message);
 	}
 };
 const goListPage = () => router.push({ name: 'PostList' });
