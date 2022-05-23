@@ -50,8 +50,6 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
-import { deletePost } from '@/api/posts';
-import { ref } from 'vue';
 import { useAlert } from '@/composables/alert';
 import { useAxios } from '@/hooks/useAxios';
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { isRef, reactive, ref, unref, watchEffect } from 'vue';
+import { isRef, ref, unref, watchEffect } from 'vue';
 
 axios.defaults.baseURL = import.meta.env.VITE_APP_API_URL;
 
