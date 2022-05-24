@@ -7,8 +7,11 @@
 		<p class="text-muted">{{ createdDate }}</p>
 		<template #footer>
 			<div class="d-flex flex-row-reverse">
-				<button class="btn p-0" @click.stop="$emit('modal')">
+				<button class="btn p-1" @click.stop="$emit('modal')">
 					<i class="bi bi-emoji-sunglasses"></i>
+				</button>
+				<button class="btn p-1" @click.stop="$emit('preview')">
+					<i class="bi bi-app"></i>
 				</button>
 			</div>
 		</template>
@@ -30,7 +33,7 @@ const props = defineProps({
 		type: [String, Date, Number],
 	},
 });
-defineEmits(['modal']);
+defineEmits(['modal', 'preview']);
 const dayjs = inject('dayjs');
 const createdDate = computed(() =>
 	dayjs(props.createdAt).format('YYYY. MM. DD HH:mm:ss'),
