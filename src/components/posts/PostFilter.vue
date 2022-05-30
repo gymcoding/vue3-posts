@@ -16,9 +16,9 @@
 					@input="$emit('update:limit', $event.target.value)"
 					class="form-select"
 				>
-					<option value="6">6개씩 보기</option>
-					<option value="12">12개씩 보기</option>
-					<option value="18">18개씩 보기</option>
+					<option value="6">6개씩</option>
+					<option value="12">12개씩</option>
+					<option value="18">18개씩</option>
 				</select>
 			</div>
 		</div>
@@ -28,12 +28,13 @@
 <script setup>
 defineProps({
 	title: String,
-	limit: Number,
+	limit: [Number, String],
 });
 const emit = defineEmits(['update:title', 'update:limit']);
-const changeTitle = event => {
+
+const changeTitle = e => {
 	setTimeout(() => {
-		emit('update:title', event.target.value);
+		emit('update:title', e.target.value);
 	}, 500);
 };
 </script>

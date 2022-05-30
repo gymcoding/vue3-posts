@@ -8,6 +8,7 @@
 			:limit="params._limit"
 			@update:limit="changeLimit"
 		/>
+		<!-- v-model:limit="params._limit" -->
 
 		<hr class="my-4" />
 
@@ -16,7 +17,7 @@
 		<AppError v-else-if="error" :message="error.message" />
 
 		<template v-else-if="!isExist">
-			<p class="text-center py-5 text-muted">No Results</p>
+			<p class="text-center py-4 text-muted">No Results</p>
 		</template>
 
 		<template v-else>
