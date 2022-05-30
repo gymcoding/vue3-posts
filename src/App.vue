@@ -11,4 +11,8 @@ import TheView from '@/layouts/TheView.vue';
 	<AppAlert />
 </template>
 
-<style></style>
+<style>
+.container {
+	max-width: 940px;
+}
+</style>
