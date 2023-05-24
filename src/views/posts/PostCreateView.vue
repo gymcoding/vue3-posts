@@ -45,9 +45,9 @@ const form = ref({
 	title: null,
 	content: null,
 });
-const save = () => {
+const save = async () => {
 	try {
-		createPost({
+		await createPost({
 			...form.value,
 			createdAt: Date.now(),
 		});
